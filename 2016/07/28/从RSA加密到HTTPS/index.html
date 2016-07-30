@@ -84,12 +84,30 @@
 
 
 
-<meta property="og:type" content="website">
+<meta name="description" content="title: 从RSA加密说起date: 2016-07-30 23:35:36tags:
+- HTTPS,iOS
+
+今天在项目里调登录注册接口的时候，发现一个问题，由这个问题引出了下面这篇blog。  
+背景是这样的：手机号和密码做为接口的请求参数时，密码需要进行RSA加密，而我在charles抓包时发现，即使是同一个明文密码，经过加密后得到的字串（密文）每次都是完全不一样的。一开始我还以为是">
+<meta property="og:type" content="article">
 <meta property="og:title" content="LS's DevLog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/07/28/从RSA加密到HTTPS/index.html">
 <meta property="og:site_name" content="LS's DevLog">
+<meta property="og:description" content="title: 从RSA加密说起date: 2016-07-30 23:35:36tags:
+- HTTPS,iOS
+
+今天在项目里调登录注册接口的时候，发现一个问题，由这个问题引出了下面这篇blog。  
+背景是这样的：手机号和密码做为接口的请求参数时，密码需要进行RSA加密，而我在charles抓包时发现，即使是同一个明文密码，经过加密后得到的字串（密文）每次都是完全不一样的。一开始我还以为是">
+<meta property="og:image" content="https://github.com/simonleo/devlog/blob/master/sources/JSPatchSecurity.png?raw=true">
+<meta property="og:updated_time" content="2016-07-30T15:36:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LS's DevLog">
+<meta name="twitter:description" content="title: 从RSA加密说起date: 2016-07-30 23:35:36tags:
+- HTTPS,iOS
+
+今天在项目里调登录注册接口的时候，发现一个问题，由这个问题引出了下面这篇blog。  
+背景是这样的：手机号和密码做为接口的请求参数时，密码需要进行RSA加密，而我在charles抓包时发现，即使是同一个明文密码，经过加密后得到的字串（密文）每次都是完全不一样的。一开始我还以为是">
+<meta name="twitter:image" content="https://github.com/simonleo/devlog/blob/master/sources/JSPatchSecurity.png?raw=true">
 
 
 
@@ -110,9 +128,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/28/从RSA加密到HTTPS/"/>
 
-  <title> LS's DevLog </title>
+  <title>  | LS's DevLog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -133,9 +151,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -202,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -225,9 +241,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/07/30/从RSA加密说起/" itemprop="url">
-                  从RSA加密说起
-                </a>
               
             
           </h1>
@@ -239,8 +252,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-30T23:39:05+08:00" content="2016-07-30">
-              2016-07-30
+            <time itemprop="dateCreated" datetime="2016-07-28T00:40:43+08:00" content="2016-07-28">
+              2016-07-28
             </time>
           </span>
 
@@ -267,9 +280,11 @@
       
 
       
-        
-          
-            <p>今天在项目里调登录注册接口的时候，发现一个问题，由这个问题引出了下面这篇blog。  </p>
+        <hr>
+<p>title: 从RSA加密说起<br>date: 2016-07-30 23:35:36<br>tags:</p>
+<pre><code>- HTTPS,iOS
+</code></pre><hr>
+<p>今天在项目里调登录注册接口的时候，发现一个问题，由这个问题引出了下面这篇blog。  </p>
 <p>背景是这样的：手机号和密码做为接口的请求参数时，密码需要进行<strong>RSA加密</strong>，而我在charles抓包时发现，即使是<strong>同一个明文密码</strong>，经过加密后得到的字串（密文）每次都是完全不一样的。一开始我还以为是请求接口的地方出了问题，后来经过验证确实正常情况就是<strong>每次加密的密文都不一样</strong>，而传到服务器那边校验也能正常工作。  </p>
 <p>出于对于这样一个校验流程的好奇，我查找了一些资料，了解了下RSA的相关内容。  </p>
 <h3 id="非对称加密之RSA"><a href="#非对称加密之RSA" class="headerlink" title="非对称加密之RSA"></a>非对称加密之RSA</h3><p>为保障传输数据的安全，需要使用加密算法。加密算法一般分为两类：“对称”加密算法和“非对称”加密算法，常用的分别为<strong>AES</strong>和<strong>RSA</strong>。“对称”加密算法的安全性完全取决于对加密密钥的管理，不在本文的关注范围内。</p>
@@ -381,16 +396,20 @@
 <p>HTTPS相关的文章先贴一下，后面再看：<br><a href="http://www.oncenote.com/2014/10/21/Security-1-HTTPS/" target="_blank" rel="external">iOS安全系列之一：HTTPS</a><br><a href="http://www.oncenote.com/2015/09/16/Security-2-HTTPS2/" target="_blank" rel="external">iOS安全系列之二：HTTPS进阶</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA3MDExNzcyNA==&amp;mid=402053009&amp;idx=1&amp;sn=ea531fc21a07d33f8a0408e5206c60f3" target="_blank" rel="external">HTTPS到底是个啥玩意儿？</a><br><a href="https://segmentfault.com/a/1190000004523659?f=tt&amp;hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">HTTPS科普扫盲帖</a></p>
 <p>本文学习参考了以下文章：<br><a href="http://mrpeak.cn/blog/encrypt/" target="_blank" rel="external">App安全之网络传输安全</a><br><a href="http://www.ruanyifeng.com/blog/2013/06/rsa_algorithm_part_one.html" target="_blank" rel="external">RSA算法原理</a><br><a href="http://www.kgc.cn/bbs/post/29886.shtml" target="_blank" rel="external">一篇搞定RSA加密与SHA签名</a><br><a href="http://stackoverflow.com/questions/5054036/what-is-the-difference-between-the-different-padding-types-on-ios" target="_blank" rel="external">what-is-the-difference-between-the-different-padding-types-on-ios</a><br><a href="http://blog.cnbang.net/tech/2879/" target="_blank" rel="external">JSPatch 部署安全策略</a></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -398,316 +417,32 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/07/24/锁定横屏的实现与遇到的坑/" rel="next" title="锁定横屏的实现与遇到的坑">
+                <i class="fa fa-chevron-left"></i> 锁定横屏的实现与遇到的坑
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/07/24/锁定横屏的实现与遇到的坑/" itemprop="url">
-                  锁定横屏的实现与遇到的坑
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-24T22:05:36+08:00" content="2016-07-24">
-              2016-07-24
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>最近项目中有个锁定横屏的需求。具体是通过url进入h5页面时，url中有参数控制横屏进入webview页面，并能锁定横屏显示。于是研究了下横竖屏切换控制，在进入横屏的要求上也遇到了些坑，最终得到比较好的解决，记录如下：  </p>
-<h3 id="presentViewController"><a href="#presentViewController" class="headerlink" title="presentViewController"></a>presentViewController</h3><p><code>supportedInterfaceOrientations 和 preferredInterfaceOrientationForPresentation方法</code></p>
-<p>如果当前viewcontroller是通过<code>presentViewController</code>的方式切换出来的，我们可以通过preferredInterfaceOrientationForPresentation方法设置视图默认显示的方向。同时通过supportedInterfaceOrientations方法设置视图支持的显示方向。  </p>
-<pre><code>//不支持自动旋转，iOS6以后支持的方法
-- (BOOL)shouldAutorotate  
-{  
-    return NO;  
-}  
-
-//支持横向  
--(NSUInteger)supportedInterfaceOrientations  
-{  
-    return UIInterfaceOrientationMaskLandscapeRight;  
-}  
-
-//当视图是通过 presentViewController 出来的时候，设定视图默认显示的方向为横向  
--(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation  
-{  
-    return UIInterfaceOrientationLandscapeRight;  
-}  
-
-//IOS6以前的旋转控制方法，这里加上适配IOS5  
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation  
-{  
-    return toInterfaceOrientation == UIInterfaceOrientationLandscapeRight;  
-}  
-</code></pre><h3 id="pushViewController"><a href="#pushViewController" class="headerlink" title="pushViewController"></a>pushViewController</h3><p>如果viewcontroller是通过<code>push的方式</code>切换进来的（实际上我们项目中遇到的大多数场景都是这种），只是设置当前VC的横竖屏控制权限是不够的。因为push栈里各个视图控制器的横竖屏控制权限是由根VC决定的，所以在通常的<code>TNV架构</code>(TabbarController-&gt;NavigationController-&gt;ViewController)里，横竖屏控制的属性我们要从TabbarController一路获取到当前ViewController。  </p>
-<pre><code>@interface LSTabBarController : UITabbarController
-
-@implementation LSTabBarController
-- (BOOL)shouldAutorotate
-{
-    return [self.selectedViewController shouldAutorotate];
-}
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return [self.selectedViewController supportedInterfaceOrientations];
-}
-@end
-
-@interface LSNavigationRotateController : UINavigationController
-
-@implementation LSNavigationRotateController
-- (BOOL)shouldAutorotate
-{
-    return [self.topViewController shouldAutorotate];
-}
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return [self.topViewController supportedInterfaceOrientations];
-}
-@end
-</code></pre><p>再在需要设置横屏的VC上设置好相应方法即可。  </p>
-<h3 id="解决了吗？并没有！"><a href="#解决了吗？并没有！" class="headerlink" title="解决了吗？并没有！"></a>解决了吗？并没有！</h3><p>看似大功告成，当我调试时，立刻发现一个问题：当我们从视图A（竖屏）push切换到视图B（横屏）的时候，视图不会自动发生横竖屏切换，而是当设备改变方向的时候才会根据代码中对应的方法设置去改变当前视图的横竖屏方向。<br>原因是<code>shouldAutorotate</code>和<code>supportedInterfaceOrientations</code>方法只有设备改变方向的时候才会被调用，而进入视图的时候是不会被触发调用的。更悲伤的是上面presentVC里的<code>preferredInterfaceOrientationForPresentation</code>方法在pushVC里也不起作用了，事实上这个方法系统只在模态动画(modal)展示视图时才会调用。  </p>
-<p>既然进入视图时系统不能自动触发转屏，那我们就手动触发。这里currentDevice的orientation属性没有公开的设置方法，我们用KVC的方式修改。  </p>
-<pre><code>- (void)viewWillAppear:(BOOL)animated{
-    [self forceToOrientation:UIInterfaceOrientationLandscapeLeft];
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    [self forceToOrientation:UIInterfaceOrientationPortrait];
-}
-
-- (void)forceToOrientation:(UIDeviceOrientation)orientation{
-    NSNumber *orientationUnknown = [NSNumber numberWithInt:UIInterfaceOrientationUnknown];
-    [[UIDevice currentDevice] setValue:orientationUnknown forKey:@&quot;orientation&quot;];
-
-    NSNumber *orientationTarget = [NSNumber numberWithInt:orientation];
-    [[UIDevice currentDevice] setValue:orientationTarget forKey:@&quot;orientation&quot;];
-}  
-</code></pre><p>为什么每次设置orientation的时候都先设置为UnKnown？因为在视图B回到视图A时，如果当时设备方向已经是Portrait，再设置成Portrait会不起作用(直接return)。  </p>
-<h3 id="好了吧？还是没有～"><a href="#好了吧？还是没有～" class="headerlink" title="好了吧？还是没有～"></a>好了吧？还是没有～</h3><p>加上手动触发转屏后，我欣喜的看到页面在进入后自动转为横屏展示，可是当我返回时，又发现了一个蛋疼的问题：  </p>
-<p>我测试进入h5页面的场景是通过点击feed流页面的cardview里的网页链接，点击～push进h5页面～转横屏～一切都很好，但点返回后，发现原来链接所在的card里的图文排版乱了～～  </p>
-<p><code>像下面这样</code><br><img src="http://simonleo.github.io/img/QQ20160723-1.png" alt="image">  </p>
-<p>我再三检查basicWebViewController里的-(void)viewWillDisappear方法，确实是调用了将屏幕转回Portrait的方法，上层页面的刷新布局的方法在返回时也正常调用，一切都感觉没啥问题。  </p>
-<p>折腾了好一阵，我发现一个现象，就是从h5页面返回后，只有点击链接所在的那个card里图文排版错乱，它上下的card都是正常显示的（那些card也都在屏幕里）。于是我找到处理card点击链接的代码，发现了这个:  </p>
-<pre><code>- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    if (self.pressingActiveRange) {
-
-        id&lt;WBTextActiveRange&gt; activeRange = self.pressingActiveRange;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self eventDelegateDidPressActiveRange:activeRange];
-        });
-
-        _touchesBeginPoint = CGPointZero;
-
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 若用户点击速度过快，hitRange高亮状态还未绘制又取消高亮会导致没有高亮效果
-            // 故延迟执行
-            [self setPressingActiveRange:nil];
-            [[self eventDelegateContextView] setNeedsDisplay];
-        });
-    }
-}
-</code></pre><p>哈！在调用delegate响应点击事件后，代码里还做了这么一件事：延迟执行取消高亮(链接点击有高亮效果)的重新绘制!可以猜想执行绘制的时候屏幕也处在旋转的过程中，这中间的状态很难确定，自然绘制出来的排版是乱的，而在h5页面返回时又没有相应的重新绘制的操作，导致了返回后这个响应链接的card排版错乱，这也解释了其他card能正常显示。  </p>
-<p>找到了原因，解决方法就很简单。在进入页面的viewWillAppear方法里，<strong>把旋转屏幕的操作改成延迟执行</strong>:  </p>
-<pre><code>dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 *     NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self forceToOrientation:UIInterfaceOrientationLandscapeLeft];
-    });
-</code></pre><p>这样保证绘制工作结束后(下一个runloop)再执行转屏，从而避免了排版错乱的问题。  </p>
-<h3 id="一些感想"><a href="#一些感想" class="headerlink" title="一些感想"></a>一些感想</h3><p>因为选择锁定横屏这是浏览器做为一个通用的模块给其他业务提供的服务，在出现问题时，自然不能改动外面业务的逻辑，而只能从浏览器模块本身找解决办法。上面的方法比较好的解决了我遇到的问题，也可以说是应对潜在这一类问题(排版)的通用解决办法。       </p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/24/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-24T20:26:14+08:00" content="2016-07-24">
-              2016-07-24
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -715,6 +450,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -734,8 +473,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -756,7 +504,7 @@
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -789,6 +537,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#非对称加密之RSA"><span class="nav-number">1.</span> <span class="nav-text">非对称加密之RSA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSA加密中的padding"><span class="nav-number">2.</span> <span class="nav-text">RSA加密中的padding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSA签名验证"><span class="nav-number">3.</span> <span class="nav-text">RSA签名验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于HTTPS"><span class="nav-number">4.</span> <span class="nav-text">关于HTTPS</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -885,6 +644,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
